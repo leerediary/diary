@@ -1,0 +1,43 @@
+{
+  "name": "diary-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "verify:migration": "tsx test/migration-verify.ts",
+    "verify:lww": "tsx test/lww-verify.ts",
+    "verify:sync": "tsx test/sync-engine-verify.ts",
+    "verify:converge": "tsx test/sync-converge-verify.ts",
+    "verify:sqlite": "tsx test/sqlite-converge-verify.ts",
+    "verify:pwa": "node test/verify-pwa.mjs",
+    "serve:out": "node scripts/serve-out.mjs",
+    "serve:out:subpath": "NEXT_PUBLIC_BASE_PATH=/diary-web BASE_PATH=/diary-web node scripts/serve-out.mjs",
+    "apple:dev": "scripts/apple-dev.sh",
+    "apple:build": "scripts/apple-dev.sh --build",
+    "gen:icons": "node scripts/gen-icons.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.105.4",
+    "dexie": "^4.4.2",
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "recharts": "^3.8.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "better-sqlite3": "^11.10.0",
+    "fake-indexeddb": "^6.2.5",
+    "tailwindcss": "^4",
+    "tsx": "^4.22.1",
+    "typescript": "^5",
+    "vitest": "^4.1.6"
+  }
+}
